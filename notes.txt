@@ -1,6 +1,27 @@
 # components
 * ide, code cell and code preview
 * code provide to preview as a string. we have to execute it safely
-* ocde might have jsx that browser cant execute
-* import might happen. deal with those imports
+* ocde might have jsx that browser cant execute (or advance js) => transpiler with babel
+* import might happen. deal with those imports => bundler with webpack
 
+
+# running babel for advance js and jsx
+1 : react app takes user code => send to backend api server >= imeediate process response 
+2 : react => run babel directly inside user's browser 
+
+# import statement
+* module: make some values available to other files and/or consume values from other files.
+* bundler: make multiples modules and combine them altogether and link them in one single file.
+* bunlder >= read the cotent opf the entry file (index.js), foudn all the diff require/import /exportr => auto found all modules on our hard drive
+* link all those files together in a one single output.
+
+* in the app ,we want our bunlder to reach out to npm directly instead of our hard drive.
+# diff ways to implement bundler
+1. react code => send that to some api server => web pack runs => find missing module => npm i plugin: backend wil have a hard drive that have tons of plugins
+2. still have backend >= webpack finds an import => we write plugin to fetch individual file from npm
+3. react app and webpack processing at the same place (user's broswer)
+
+# pros and cons of backend and browser:
+* remote api: we can cache download npm module to bundle code faster, will work better for user with slow devices
+* local : removes an extra request to the api server - faster code execution, dont have to maintain, less complexity => go with this one.
+* webpack doesnt woek in br >= thow babel and webpack away => use esbuild
