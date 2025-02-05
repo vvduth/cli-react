@@ -1,0 +1,6 @@
+# components
+* ide, code cell and code preview
+* code provide to preview as a string. we have to execute it safely
+* ocde might have jsx that browser cant execute
+* import might happen. deal with those imports
+
